@@ -1,23 +1,18 @@
 function pop(array) {
-  if (array.length === 0) {
-    return undefined;
-  }
+  const poppedElement = array[array.length - 1];
+  array.splice(array.length - 1);
 
-  let lastElement = array[array.length - 1];
-  array.length -= 1;
-
-  return lastElement;
+  return poppedElement;
 }
 
-function push(array, ...values) {
-  let oldLength = array.length;
-  let newLength = oldLength + values.length;
+function push(array, ...args) {
+  const length = args.length;
 
-  for (let index = 0; index < values.length; index += 1) {
-    array[oldLength + index] = values[index];
+  for (let i = 0; i < length; i += 1) {
+    array[array.length] = args[i];
   }
 
-  return newLength;
+  return array.length;
 }
 
 // pop
