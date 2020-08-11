@@ -1,13 +1,13 @@
 function rot13(string) {
-  const UPPER_A_CHAR_CODE = 65;
-  const UPPER_M_CHAR_CODE = 77;
-  const UPPER_N_CHAR_CODE = 78;
-  const UPPER_Z_CHAR_CODE = 90;
+  const UPPER_A_CHAR_CODE = 'A'.charCodeAt();
+  const UPPER_M_CHAR_CODE = 'M'.charCodeAt();
+  const UPPER_N_CHAR_CODE = 'N'.charCodeAt();
+  const UPPER_Z_CHAR_CODE = 'Z'.charCodeAt();
 
-  const LOWER_A_CHAR_CODE = 97;
-  const LOWER_M_CHAR_CODE = 109;
-  const LOWER_N_CHAR_CODE = 110;
-  const LOWER_Z_CHAR_CODE = 122;
+  const LOWER_A_CHAR_CODE = 'a'.charCodeAt();
+  const LOWER_M_CHAR_CODE = 'm'.charCodeAt();
+  const LOWER_N_CHAR_CODE = 'n'.charCodeAt();
+  const LOWER_Z_CHAR_CODE = 'z'.charCodeAt();
 
   function isAtoM(charCode) {
     return (charCode >= UPPER_A_CHAR_CODE && charCode <= UPPER_M_CHAR_CODE) ||
