@@ -1,16 +1,30 @@
 const rlSync = require('readline-sync');
-const PERCENT_CONVERSION = .01;
 
-console.log('What is the bill?');
-let bill = rlSync.prompt();
-bill = parseFloat(bill);
+let number = rlSync.question('Please enter an integer greater than 0: ');
+number = parseInt(number, 10);
 
-console.log('What is the tip percentage?');
-let tipPercentage = rlSync.prompt();
-tipPercentage = parseFloat(tipPercentage) * PERCENT_CONVERSION;
+let operation = rlSync.question('Enter "s" to compute the sum, or "p" to compute the product. ');
+operation = operation.toLowerCase();
 
-let tip = bill * tipPercentage;
-let total = tip + bill;
+if (operation === 's') {
+  let sum = 0;
 
-console.log(`The tip is $${tip.toFixed(2)}`);
-console.log(`The total is $${total.toFixed(2)}`);
+  for (let i = 1; i <= number; i += 1) {
+    sum += i;
+  }
+
+  console.log(`The sum of the integers between 1 and ${number} is ${sum}.`);
+
+} else if (operation === 'p') {
+  let product = 1;
+
+  for (let i = 1; i <= number; i += 1) {
+    product *= i;
+  }
+
+  console.log(`The product of the integers between 1 and ${number} is ${product}.`);
+
+
+} else {
+  console.log('unknown operation!');
+}

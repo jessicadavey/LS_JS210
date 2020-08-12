@@ -1,15 +1,27 @@
-const MINUTES_PER_HOUR = 60;
-const HOURS_PER_DAY = 24;
-const MINUTES_PER_DAY = HOURS_PER_DAY * MINUTES_PER_HOUR;
+/*
+1. get midnight
+2. convert to millisecond representation
+3. convert delta minutes to delta milliseconds
+4. add to midnight to make new time
+5. get hours from new time
+6. get minutes from new time
+7. pad both with zeroes
+8. concatenate into hh:mm
+
+*/
+
+
+const MILLISECONDS_PER_MINUTE = 60000;
 
 function timeOfDay(deltaMinutes) {
-  deltaMinutes = deltaMinutes % MINUTES_PER_DAY;
-  if (deltaMinutes < 0) {
-    deltaMinutes = MINUTES_PER_DAY + deltaMinutes;
-  }
+  let midnight = new Date('January 1, 2000, 00:00:00');
 
-  let hours = Math.floor(deltaMinutes / MINUTES_PER_HOUR);
-  let minutes = deltaMinutes % MINUTES_PER_HOUR;
+  let deltaMilliseconds = deltaMinutes * MILLISECONDS_PER_MINUTE;
+
+  let newMilliseconds = new Date(midnight.getTime() + deltaMilliseconds);
+
+  let hours = newMilliseconds.getHours();
+  let minutes = newMilliseconds.getMinutes();
 
   return `${padWithZeroes(hours, 2)}:${padWithZeroes(minutes, 2)}`;
 }

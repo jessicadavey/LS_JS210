@@ -1,13 +1,14 @@
+
 const rlSync = require('readline-sync');
-const SQ_METERS_TO_SQ_FEET = 10.7639;
 
-console.log('Enter the length of the room in meters:');
-let lengthInMeters = parseInt(rlSync.prompt(), 10);
+let bill = rlSync.question('What is the bill? ');
+bill = parseFloat(bill);
 
-console.log('Enter the width of the room in meters:');
-let widthInMeters = parseInt(rlSync.prompt(), 10);
+let tipRate = rlSync.question('What is the tip percentage? ');
+tipRate = parseFloat(tipRate);
 
-let areaInSquareMeters = (lengthInMeters * widthInMeters).toFixed(2);
-let areaInSquareFeet = (areaInSquareMeters * SQ_METERS_TO_SQ_FEET).toFixed(2);
+let tip = bill * (tipRate / 100);
+let total = bill + tip;
 
-console.log(`The area of the room is ${areaInSquareMeters} square meters (${areaInSquareFeet} square feet).`);
+console.log(`The tip is $${tip.toFixed(2)}`);
+console.log(`The total is $${total.toFixed(2)}`);

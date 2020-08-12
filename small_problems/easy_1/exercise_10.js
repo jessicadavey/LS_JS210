@@ -1,17 +1,11 @@
-const multisum = function(limit) {
-  let total = 0;
-
-  for (let number = 3; number <= limit; number += 1) {
-    if (number % 3 === 0 || number % 5 === 0) {
-      total += number;
-    }
-  }
-
-  return total;
+function asciiValue(string) {
+  return string.split('')
+               .map(char => char.charCodeAt(0))
+               .reduce(((acc, num) => acc + num), 0);
 }
 
 
-console.log(multisum(3));       // 3
-console.log(multisum(5));       // 8
-console.log(multisum(10));      // 33
-console.log(multisum(1000));    // 234168
+console.log(asciiValue('Four score'));         // 984
+console.log(asciiValue('Launch School'));      // 1251
+console.log(asciiValue('a'));                  // 97
+console.log(asciiValue(''));                   // 0

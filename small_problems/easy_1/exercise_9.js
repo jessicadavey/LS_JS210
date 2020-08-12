@@ -1,21 +1,17 @@
-function isLeapYear(year) {
-  if (year < 1752) {
-    return year % 4 === 0;
-  } else if (year >= 1752) {
-    return (year % 400 === 0) || (year % 4 === 0 && year % 100 !== 0);
+
+function multisum(number) {
+  let sum = 0;
+
+  for (let index = 1; index <= number; index += 1) {
+    if (index % 5 === 0 || index % 3 === 0) {
+      sum += index;
+    }
   }
+
+  return sum;
 }
 
-console.log(isLeapYear(2016) === true);
-console.log(isLeapYear(2015) === false);
-console.log(isLeapYear(2100) === false);
-console.log(isLeapYear(2400) === true);
-console.log(isLeapYear(240000) === true);
-console.log(isLeapYear(240001) === false);
-console.log(isLeapYear(2000) === true);
-console.log(isLeapYear(1900) === false);
-console.log(isLeapYear(1752) === true);
-console.log(isLeapYear(1700) === true);
-console.log(isLeapYear(1) === false);
-console.log(isLeapYear(100) === true);
-console.log(isLeapYear(400) === true);
+console.log(multisum(3));       // 3
+console.log(multisum(5));       // 8
+console.log(multisum(10));      // 33
+console.log(multisum(1000));    // 234168

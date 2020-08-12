@@ -1,11 +1,3 @@
-const isOdd = function(integer) {
-  return integer % 2 !== 0;
+for (let number = 1; number <= 99; number += 2) {
+  console.log(number);
 }
-
-
-console.log(isOdd(2)); // => false
-console.log(isOdd(5)); // => true
-console.log(isOdd(-17)); // => true
-console.log(isOdd(-8)); // => false
-console.log(isOdd(0)); // => false
-console.log(isOdd(7)); // => true
