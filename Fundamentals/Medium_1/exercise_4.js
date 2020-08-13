@@ -1,9 +1,8 @@
 function getSelectedColumns(numbers, cols) {
-  const result = [];
-  let length;
+  var result = [];
 
-  for (let i = 0, length = numbers.length; i < length; i += 1) {
-    for (let j = 0, length = cols.length; j < length; j += 1) {
+  for (var i = 0, length = numbers.length; i < length; i += 1) {
+    for (var j = 0, length = cols.length; j < length; j += 1) {
       if (!result[j]) {
         result[j] = [];
       }
@@ -23,6 +22,7 @@ const array2 = [[1, 2, 3], [1, 2, 3], [1, 2, 3]];
 // [[1, 2, 3],
 //  [4, 5, 6],
 //  [7, 8, 9]]
+
 
 console.log(getSelectedColumns(array1, [0]));     // [[1]];            expected: [[1, 4, 7]]
 console.log(getSelectedColumns(array1, [0, 2]));  // [[1, 4], [3, 6]]; expected: [[1, 4, 7], [3, 6, 9]]
