@@ -1,8 +1,7 @@
 function swapName(fullName) {
   let nameArray = fullName.split(' ');
 
-  let firstName = nameArray[0];
-  let lastName = nameArray[1];
+  let [firstName, lastName] = nameArray;
 
   return [lastName, firstName].join(', ');
 }
