@@ -5,3 +5,4 @@ if (1 === 1) {
 }
 
 console.log(a);
+console.log(a);
